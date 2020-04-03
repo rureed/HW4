@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="scripts.js"></script>
 
 </head>
 <body>
@@ -12,14 +13,17 @@
 
     <div class="jumbotron" class="hide">
         <h1 class="display-4">Code Quiz</h1>
-        <p class="lead">This is cruel a quiz. Complete it. There is a timer. Wrong answers deduct time.</p>
+        <p class="lead">This is a quiz. Complete it. There is a timer. Wrong answers deduct time.</p>
         <hr class="my-4">
         <p>Clicl the start button to begin.</p>
         <div id="questions" class="hide">Question</div>
         <div id="answers" class="btn-grid">
-
+            <button class="btn btn btn-secondary btn-lg">Answer A</button>
+            <button class="btn btn btn-secondary btn-lg">Answer B</button>
+            <button class="btn btn btn-secondary btn-lg">Answer C</button>
+            <button class="btn btn btn-secondary btn-lg">Answer D</button>
         </div>
-        <div class="startNext">
+        <div class="nav">
             <a id="startBtn" class="btn btn-primary btn-lg" href="#" role="button">Start Quiz</a>
             <a id="nextBtn" class="btn btn-primary btn-lg hide" href="#" role="button">Next</a>
         </div>
