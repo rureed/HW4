@@ -1,27 +1,27 @@
 var questions = [{
-    title: "WORK IT, MAKE IT, DO IT, ...?",
-    choices: ["BUILD IT", "MAKES US", "DAFT", "PUNK"],
-    answer: "MAKES US"
+    q: "WORK IT, MAKE IT, DO IT, ...?",
+    c: ["BUILD IT", "MAKES US", "DAFT", "PUNK"],
+    a: "MAKES US"
 },
 {
-    title: "HARDER, BETTER, FASTER, ...?",
-    choices: ["SMARTER", "STRONGER", "SMELLY", "DISCOVERY"],
-    answer: "STRONGER"
+    q: "HARDER, BETTER, FASTER, ...?",
+    c: ["SMARTER", "STRONGER", "SMELLY", "DISCOVERY"],
+    a: "STRONGER"
 },
 {
-    title: "MORE THAN, HOUR, OUR, ...?",
-    choices: ["FLOWER", "NEVER", "INTERSTELLA", "5555"],
-    answer: "NEVER"
+    q: "MORE THAN, HOUR, OUR, ...?",
+    c: ["FLOWER", "NEVER", "INTERSTELLA", "5555"],
+    a: "NEVER"
 },
 {
-    title: "EVER, AFTER, WORK IS, ...?",
-    choices: ["HELMETS", "OVER", "THOMAS", "GUY-MANUEL"],
-    answer: "OVER"
+    q: "EVER, AFTER, WORK IS, ...?",
+    c: ["HELMETS", "OVER", "THOMAS", "GUY-MANUEL"],
+    a: "OVER"
 },
 {
-    title: "Work it harder, make it better, do it faster, makes us stronger, more than ever, hour after, our work is ...?",
-    choices: ["always coding", "never over", "one more time", "TRON"],
-    answer: "never over"
+    q: "Work it harder, make it better, do it faster, makes us stronger, more than ever, hour after, our work is ...?",
+    c: ["always coding", "never over", "one more time", "TRON"],
+    a: "never over"
 }
 ]
 
@@ -40,23 +40,28 @@ function time() {
 
         if (remaining <= 0) {
             clearInterval(clock);
-            endQuiz();
+            allDone();
         }
     }, 1000);
     next()
 }
 
+function next() {
+    question++
 
+    if (question > questions.length - 1) {
+        allDone();
+        return;
+    }
+
+    var theQuiz = questions[question].q
+}
   
 
 var startBtn = document.get
 
 function start() {
 
-
-}
-
-function next() {
 
 }
 
