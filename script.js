@@ -51,14 +51,17 @@ function next() {
 
     if (question > questions.length - 1) {
         allDone();
-        return;
+        // return;
     }
 
     var theQuiz = questions[question].q
+
+    for (i = 0; i < questions[question].c.length; i++) {
+        var buttStuff ='<button onclick=\"[ANS]\">[CHOICE]</button>';
+    }
 }
   
 
-var startBtn = document.get
 
 function start() {
 
