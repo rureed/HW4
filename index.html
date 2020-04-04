@@ -9,23 +9,29 @@
 
 </head>
 <body>
-    <!-- <button id = "start">Start Quiz</button> -->
+
+    <nav class="nav justify-content-center">
+        <div>
+            <a class="nav-link disabled" href="#">Time Remaining: </a><span id="remaining">0
+        </div>
+        <div>
+            <a class="nav-link" href="#">View High Score</a>
+        </div>
+    </nav>
 
     <div class="jumbotron" class="hide">
         <h1 class="display-4">Code Quiz</h1>
-        <p class="lead">This is a quiz. Complete it. There is a timer. Wrong answers deduct time.</p>
+        <p class="lead">You are being quizzed. You are being timed. Wrong answers deduct time. I have spoken.</p>
         <hr class="my-4">
         <p>Click the start button to begin.</p>
-        <div id="questions" class="hide">Question</div>
-        <div id="answers" class="btn-grid">
-
-        </div>
+        <div id="questions"></div>
+        <div id="answers"></div>
         <div class="nav">
             <!-- <a id="startBtn" class="btn btn-primary btn-lg" href="#" role="button">Start Quiz</a>
             <a id="nextBtn" class="btn btn-primary btn-lg hide" href="#" role="button">Next</a> -->
         </div>
 
-      </div>
+    </div>
     
 
 </body>

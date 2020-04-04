@@ -1,4 +1,4 @@
-function countDown() {
+function remaining() {
     var timeLeft = 75;
   
     var timeInterval = setInterval(function() {
