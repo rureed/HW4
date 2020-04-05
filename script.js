@@ -54,10 +54,10 @@ function next() {
         return;
     }
 
-    var theQuiz = questions[question].q
+    var theQuiz = '<h3>' + questions[question].q + '</h3>'
 
     for (var i = 0; i < questions[question].c.length; i++) {
-        var butGo = '<button onclick="answer">selection</button>';
+        var butGo = '<button class="btn-primary btn-lg" onclick="answer">selection</button>';
      butGo = butGo.replace("selection", questions[question].c[i]);
     if (questions[question].c[i] === questions[question].a) {
         butGo = butGo.replace("answer", "right()");
@@ -69,13 +69,18 @@ function next() {
     document.getElementById("content").innerHTML = theQuiz;
 }
 
-
 function right() {
-    score += 20;
+    // score += 20;
     next();
 }
 
 function wrong() {
     remaining -= 10;
     next();
+}
+
+function allDone() {
+    clearInterval(clock);
+    var area = '<h1> Your score is ' + remaining + '.</h1>'
+    document.getElementById("content").innerHTML = area;
 }
