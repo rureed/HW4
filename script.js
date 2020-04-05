@@ -32,11 +32,11 @@ var clock;
 
 function time() {
     remaining = 75;
-    document.getElementById("remaining").innerHTML = remaining;
+    document.querySelector("#remaining").innerHTML = remaining;
 
     clock = setInterval(function () {
         remaining--;
-        document.getElementById("remaining").innerHTML = remaining;
+        document.querySelector("#remaining").innerHTML = remaining;
 
         if (remaining <= 0) {
             clearInterval(clock);
@@ -66,11 +66,10 @@ function next() {
     }
     theQuiz += butGo
 }
-    document.getElementById("content").innerHTML = theQuiz;
+    document.querySelector("#area").innerHTML = theQuiz;
 }
 
 function right() {
-    // score += 20;
     next();
 }
 
@@ -81,6 +80,17 @@ function wrong() {
 
 function allDone() {
     clearInterval(clock);
-    var area = '<h1> Your score is ' + remaining + '.</h1>'
-    document.getElementById("content").innerHTML = area;
+    var area = '<h1> Your score is ' + remaining + '.</h1> <br> <input id="name" placeholder="name"> <br> <button onclick="save()">Save Your Score</button>';
+    document.querySelector("#area").innerHTML = area;
+}
+
+function save() {
+    localStorage.setItem("palyer", document.querySelector("#name").value);
+    localStorage.setItem("playerScore", score);
+    theScore();
+}
+
+function theScore() {
+    var area = '<h3>' + localStorage.getItem("player") + ': ' + localStorage.getItem("playerScore") + '</h3>';
+    document.querySelector("#area").innerHTML = area
 }
