@@ -57,12 +57,12 @@ function next() {
     var theQuiz = questions[question].q
 
     for (var i = 0; i < questions[question].c.length; i++) {
-        var butGo = '<button onclick="[ANS]">[CHOICE]</button>';
-     butGo = butGo.replace("[CHOICE]", questions[question].c[i]);
+        var butGo = '<button onclick="answer">selection</button>';
+     butGo = butGo.replace("selection", questions[question].c[i]);
     if (questions[question].c[i] === questions[question].a) {
-        butGo = butGo.replace("[ANS]", "right()");
+        butGo = butGo.replace("answer", "right()");
     } else {
-        butGo = butGo.replace("[ANS]", "wrong()");
+        butGo = butGo.replace("answer", "wrong()");
     }
     theQuiz += butGo
 }
@@ -70,11 +70,12 @@ function next() {
 }
 
 
-function start() {
-
-
+function right() {
+    score += 20;
+    next();
 }
 
-function answer() {
-
+function wrong() {
+    remaining -= 10;
+    next();
 }
