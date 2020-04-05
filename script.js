@@ -1,20 +1,20 @@
 var questions = [{
-    q: "WORK IT, MAKE IT, DO IT, ...?",
+    q: "WORK IT - MAKE IT - DO IT - ...?",
     c: ["BUILD IT", "MAKES US", "DAFT", "PUNK"],
     a: "MAKES US"
 },
 {
-    q: "HARDER, BETTER, FASTER, ...?",
+    q: "HARDER - BETTER - FASTER - ...?",
     c: ["SMARTER", "STRONGER", "SMELLY", "DISCOVERY"],
     a: "STRONGER"
 },
 {
-    q: "MORE THAN, HOUR, OUR, ...?",
+    q: "MORE THAN - HOUR - OUR - ...?",
     c: ["FLOWER", "NEVER", "INTERSTELLA", "5555"],
     a: "NEVER"
 },
 {
-    q: "EVER, AFTER, WORK IS, ...?",
+    q: "EVER - AFTER - WORK IS - ...?",
     c: ["HELMETS", "OVER", "THOMAS", "GUY-MANUEL"],
     a: "OVER"
 },
@@ -43,7 +43,7 @@ function time() {
             allDone();
         }
     }, 1000);
-    next()
+    next();
 }
 
 function next() {
@@ -56,11 +56,18 @@ function next() {
 
     var theQuiz = questions[question].q
 
-    for (i = 0; i < questions[question].c.length; i++) {
-        var buttStuff ='<button onclick=\"[ANS]\">[CHOICE]</button>';
-    }
+    for (var i = 0; i < questions[question].c.length; i++) {
+        var butGo ='<button onclick="[ANS]">[CHOICE]</button>';
+    }   butGo = butGo.replace("[CHOICE]", questions[question].c[i]);
+        if (questions[question].c[i] === questions[question].a) {
+            butGo = butGo.replace("[ANS]", "right()");
+        }   else {
+                butGo = butGo.replace("[ANS]", "wrong()");
+        }
+        theQuiz += butGo
 }
-  
+
+
 
 
 function start() {
