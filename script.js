@@ -31,7 +31,7 @@ var remaining = 0;
 var clock;
 
 function time() {
-    remaining = 75;
+    remaining = 120;
     document.querySelector("#remaining").innerHTML = remaining;
 
     clock = setInterval(function () {
@@ -80,14 +80,21 @@ function wrong() {
 
 function allDone() {
     clearInterval(clock);
-    var area = '<h1> Your score is ' + remaining + '.</h1> <br> <input id="aName" placeholder="Name"> <br> <button class="btn-primary btn-lg" onclick="save()">Save Your Score</button>';
+    
+    var area = '<h1> Your score is ' + remaining + '.</h1> <input type="text" id="name" placeholder="Enter Name"> <br> <button class="btn-primary btn-lg" onclick="aSave()">Save Your Score</button>';
     document.querySelector("#area").innerHTML = area;
 }
 
-function save() {
+function aSave() {
+    // var theInput = document.querySelector("#name");
+
+    //I tried different things (getElementById, querySelector, setting a var, not setting a var, renaming the id...) to get the value of 'name' to carry over to the 'theScore' function, but it continues to come up as null. Console logging the id logs emptiness rather than 'null,' but the value of the id in the 'the Score' function shows as null. Console logging 'theInput' returns the whole input element.
+    
     localStorage.setItem("playerScore", remaining);
-    localStorage.setItem("palyer", document.getElementById("aName"));
+    localStorage.setItem("player", document.getElementById('name').value);
+    // localStorage.setItem("palyer", theInput.value);
     theScore();
+
 }
 
 function theScore() {
@@ -99,5 +106,4 @@ function theScore() {
 
 
 
-console.log(remaining)
 
