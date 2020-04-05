@@ -34,7 +34,7 @@ function time() {
     remaining = 75;
     document.getElementById("remaining").innerHTML = remaining;
 
-    clock = setInterval(function() {
+    clock = setInterval(function () {
         remaining--;
         document.getElementById("remaining").innerHTML = remaining;
 
@@ -51,23 +51,23 @@ function next() {
 
     if (question > questions.length - 1) {
         allDone();
-        // return;
+        return;
     }
 
     var theQuiz = questions[question].q
 
     for (var i = 0; i < questions[question].c.length; i++) {
-        var butGo ='<button onclick="[ANS]">[CHOICE]</button>';
-    }   butGo = butGo.replace("[CHOICE]", questions[question].c[i]);
-        if (questions[question].c[i] === questions[question].a) {
-            butGo = butGo.replace("[ANS]", "right()");
-        }   else {
-                butGo = butGo.replace("[ANS]", "wrong()");
-        }
-        theQuiz += butGo
+        var butGo = '<button onclick="[ANS]">[CHOICE]</button>';
+     butGo = butGo.replace("[CHOICE]", questions[question].c[i]);
+    if (questions[question].c[i] === questions[question].a) {
+        butGo = butGo.replace("[ANS]", "right()");
+    } else {
+        butGo = butGo.replace("[ANS]", "wrong()");
+    }
+    theQuiz += butGo
 }
-
-
+    document.getElementById("content").innerHTML = theQuiz;
+}
 
 
 function start() {
