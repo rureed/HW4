@@ -1,20 +1,20 @@
 var questions = [{
-    q: "WORK IT - MAKE IT - DO IT - ...?",
+    q: "WORK IT - MAKE IT - DO IT - ...",
     c: ["BUILD IT", "MAKES US", "DAFT", "PUNK"],
     a: "MAKES US"
 },
 {
-    q: "HARDER - BETTER - FASTER - ...?",
+    q: "HARDER - BETTER - FASTER - ...",
     c: ["SMARTER", "STRONGER", "SMELLY", "DISCOVERY"],
     a: "STRONGER"
 },
 {
-    q: "MORE THAN - HOUR - OUR - ...?",
+    q: "MORE THAN - HOUR - OUR - ...",
     c: ["FLOWER", "NEVER", "INTERSTELLA", "5555"],
     a: "NEVER"
 },
 {
-    q: "EVER - AFTER - WORK IS - ...?",
+    q: "EVER - AFTER - WORK IS - ...",
     c: ["HELMETS", "OVER", "THOMAS", "GUY-MANUEL"],
     a: "OVER"
 },
@@ -25,7 +25,6 @@ var questions = [{
 }
 ]
 
-// var score = 0;
 var question = -1;
 var remaining = 0;
 var clock;
@@ -86,22 +85,16 @@ function allDone() {
 }
 
 function aSave() {
-    // var theInput = document.querySelector("#name");
-
-    //I tried different things (getElementById, querySelector, setting a var, not setting a var, renaming the id...) to get the value of 'name' to carry over to the 'theScore' function, but it continues to come up as null. Console logging the id logs emptiness rather than 'null,' but the value of the id in the 'the Score' function shows as null. Console logging 'theInput' returns the whole input element.
-    
     localStorage.setItem("playerScore", remaining);
     localStorage.setItem("player", document.getElementById('name').value);
-    // localStorage.setItem("palyer", theInput.value);
     theScore();
-
 }
 
 function theScore() {
-    var area = '<h3>' + localStorage.getItem("player") + ': ' + localStorage.getItem("playerScore") + '</h3><button class="btn-primary btn-lg" onclick="location.reload()">a button</button'
-
+    var area = '<h3>' + localStorage.getItem("player") + ': ' + localStorage.getItem("playerScore") + '</h3><button class="btn-primary btn-lg" onclick="location.reload()">Try Again?</button'
     document.querySelector("#area").innerHTML = area
-    
+
+    //If you get the last answer wrong, or just rapidly click wrong answers, the timer at the top won't reflect the actual score 'cause it doesn't update as quickly as the 'allDone' function.
 }
 
 
